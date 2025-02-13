@@ -14,6 +14,6 @@ This project implements a secure user authentication system with email verificat
 - **Tech Stack:**
   - Backend: Node.js, Express, MySQL
   - Frontend: React
-  - Security: JWT, Bcrypt, CSURF, Express Validator
+  - Security: JWT, Bcrypt,  Express Validator
   - Email Service: Nodemailer
-  - Real-Time Communication: Socket.io
+  
