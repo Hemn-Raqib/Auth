@@ -7,7 +7,7 @@ This project implements a secure user authentication system with email verificat
 - **Adaptive Authentication:** If a login attempt is detected from an unrecognized device or a location over 100KM from trusted locations, a one-time 6-digit verification code is sent via email.
 - **Device & Location Security:**
   - Device detection using **UA-Parser**.
-  - Location verification using **IP Geolocation**.
+  - Location verification using **IP Geolocation**(IPINFO).
 - **Trusted Device Management:**
   - Users can view and manage their trusted devices.
   - Ability to terminate access for specific devices, requiring re-authentication on the next login.
