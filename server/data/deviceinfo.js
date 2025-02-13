@@ -1,24 +1,20 @@
-// deviceService.js
 import {UAParser} from 'ua-parser-js';
 import crypto from 'crypto';
 
 const validateDeviceData = (data) => {
-  // Validate browser info
+  
   if (!data.browserInfo?.browserName || !data.browserInfo?.browserVersion) {
     throw new Error('Invalid browser information');
   }
 
-  // Validate device info
   if (!data.deviceInfo?.deviceType || !data.deviceInfo?.osName) {
     throw new Error('Invalid device information');
   }
 
-  // Validate capabilities
   if (!data.capabilities?.language || !data.capabilities?.platform) {
     throw new Error('Invalid capabilities information');
   }
 
-  // Validate fingerprint
   if (!data.fingerprint || data.fingerprint.length < 32) {
     throw new Error('Invalid device fingerprint');
   }
@@ -28,7 +24,6 @@ const validateDeviceData = (data) => {
 
 export const collectDeviceInfo = async (req) => {
   try {
-    // Validate required headers
     const requiredHeaders = ['user-agent', 'accept-language', 'accept-encoding'];
     const missingHeaders = requiredHeaders.filter(header => !req.headers[header]);
     
@@ -47,12 +42,10 @@ export const collectDeviceInfo = async (req) => {
     const uaParser = new UAParser(userAgent);
     const uaResult = uaParser.getResult();
 
-    // Validate parsed UA result
     if (!uaResult.browser || !uaResult.os) {
       throw new Error('Failed to parse user agent information');
     }
 
-    // Generate device fingerprint
     const fingerprintData = [
       userAgent,
       acceptLanguage,
@@ -162,14 +155,13 @@ export const collectDeviceInfo = async (req) => {
       timestamp: new Date().toISOString()
     };
 
-    // Validate the collected data
     validateDeviceData(deviceData);
 
     return deviceData;
 
   } catch (error) {
     console.error('Error collecting device information:', error);
-    return null; // Return null to indicate failure
+    return null;
   }
 };
 
