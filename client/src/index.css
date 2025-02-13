@@ -1,0 +1,100 @@
+:root {
+  
+  /* font-family: 'Inconsolata', monospace; */
+  
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #121212;
+
+  /* register button icons, changing register mode, modal, and mainscreen table */
+  --primary-color: white;
+  --background-color: #121212;
+  --surface-color: #1e1e1e;
+  --surface-color-hover: #2d2d2d;
+  --text-color: #e1e1e1;
+  --text-color-secondary: #a0a0a0;
+  --link-color: white;
+  --link-hover-color: white;
+  --border-radius: 8px;
+  --transition-duration: 0.25s;
+  --colors: black;
+  /*  */
+  
+  
+  /* Toast */
+  --success-bg: #0a3d0a;
+  --success-text: #ffffff;
+  --error-bg: #3d0a0a;
+  --error-text: #ffffff;
+  --interaction-bg: #0a1f3d;
+  --interaction-text: #ffffff;
+  /* Toast */
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  color: #213547;
+  background-color: #ffffff;
+
+
+ /* register button icons, changing register mode, modal, and mainscreen table */
+  --colors: black;
+  --primary-color: #213547;
+  --background-color: #ffffff;
+  --surface-color: #f1f1f1;
+  --surface-color-hover: #e1e1e1;
+  --text-color: #213547;
+  --text-color-secondary: #666666;
+  --link-color: black;
+  --link-hover-color: black;
+  --border-radius: 8px;
+  --transition-duration: 0.25s;
+/*  */
+
+  /* Toast */
+  --success-bg: #dcf7dc;
+  --success-text: #0a5d0a;
+  --error-bg: #fde7e7;
+  --error-text: #5d0a0a;
+  --interaction-bg: #e7effe;
+  --interaction-text: #0a2a5d;
+  /* Toast */
+}
+
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--background-color);
+}
+
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 0.95em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--surface-color);
+  cursor: pointer;
+  transition: border-color 0.25s;
+  color: var(--text-color);
+}
